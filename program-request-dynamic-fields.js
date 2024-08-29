@@ -6,12 +6,14 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("Age-Group").addEventListener("change", function() {
     const selectedValue = this.value;
     const otherAgeGroupDiv = document.getElementById("other-age-group");
+    const ageGroupSpacer = document.getElementById("age-group-spacer");
 
     if (selectedValue === "Other") {
       otherAgeGroupDiv.classList.remove("hidden");
-      console.log("Age Field Visible");
+      ageGroupSpacer.classList.remove("hide");
     } else {
       otherAgeGroupDiv.classList.add("hidden");
+      ageGroupSpacer.classList.add("hide");
     }
   });
 
@@ -19,12 +21,14 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("Desired-Class").addEventListener("change", function() {
     const selectedValue = this.value;
     const otherClassDiv = document.getElementById("other-class");
+    const classSpacer = document.getElementById("desired-class-spacer");
 
     if (selectedValue === "Propose your own idea") {
       otherClassDiv.classList.remove("hidden");
-      console.log("Class Field Visiblle");
+      classSpacer.classList.remove("hide");
     } else {
       otherClassDiv.classList.add("hidden");
+      classSpacer.classList.add("hide");
     }
   });
 });
