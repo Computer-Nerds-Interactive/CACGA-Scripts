@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (selectedValue === "Other") {
       otherAgeGroupDiv.classList.remove("hidden");
+      console.log("Age Field Visible");
     } else {
       otherAgeGroupDiv.classList.add("hidden");
     }
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (selectedValue === "Propose your own idea") {
       otherClassDiv.classList.remove("hidden");
+      console.log("Class Field Visiblle");
     } else {
       otherClassDiv.classList.add("hidden");
     }
