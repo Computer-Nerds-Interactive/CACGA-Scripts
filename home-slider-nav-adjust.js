@@ -40,6 +40,3 @@ function handleWindowResize() {
 
 // Run the function on load
 handleWindowResize();
-
-// Run the function whenever the window is resized
-window.addEventListener('resize', handleWindowResize);
