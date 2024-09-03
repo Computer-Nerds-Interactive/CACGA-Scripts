@@ -19,6 +19,7 @@ if (slider) {
     slideNav.style.width = newSlideNavWidth;
     slideLeftArrow.style.right = newSlideLeftArrowPosition;
 
+ /*   
     // Log the number of slides and calculated values to the console
     console.log('Number of slides:', numberOfSlides);
     console.log('Slide Nav Width:', newSlideNavWidth);
@@ -26,3 +27,4 @@ if (slider) {
 } else {
     console.log('Slider not found.');
 }
+*/
