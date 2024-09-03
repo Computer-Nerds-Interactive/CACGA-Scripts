@@ -15,11 +15,11 @@ function handleWindowResize() {
 
         if (window.innerWidth <= 768) {
             console.log('Small screen detected.'); // Debugging statement
-            const newSlideLeftArrowPosition = (numberOfSlides * 20) + 60 + 'px';
-            const newSlideRightArrowPosition = (numberOfSlides * 20) + 62 + 'px';
+            const newSlideLeftArrowPosition = (numberOfSlides * 22) + 60 + 'px';
+            const newSlideRightArrowPosition = (numberOfSlides * 22) + 62 + 'px';
             slideLeftArrow.style.right = newSlideLeftArrowPosition;
             slideRightArrow.style.left = newSlideRightArrowPosition;
-            slideNav.style.width = 'auto';
+            slideNav.style.width = 100 + '%';
         } else {
             console.log('Large screen detected.'); // Debugging statement
             const newSlideNavWidth = (numberOfSlides * 22) + 118 + 'px';
