@@ -1,30 +1,29 @@
-// Select the slider element with class .home-hero_slider
-const slider = document.querySelector('.home-hero_slider');
-const slideNav = document.querySelector('.home-hero_slide-nav');
-const slideLeftArrow = document.querySelector('.home-hero_slide-left-arrow');
+// Function to run code based on window size
+function handleWindowResize() {
+    const slider = document.querySelector('.home-hero_slider');
+    const slideNav = document.querySelector('.home-hero_slide-nav');
+    const slideLeftArrow = document.querySelector('.home-hero_slide-left-arrow');
+    const slideRightArrow = document.querySelector('.home-hero_slide-right-arrow'); 
 
-// Check if the slider exists
-if (slider) {
-    // Select all slide elements within the slider
-    const slides = slider.querySelectorAll('.w-slide');
+    // Check if the slider exists
+    if (slider) {
+        const slides = slider.querySelectorAll('.w-slide');
+        const numberOfSlides = slides.length;
 
-    // Count the number of slides
-    const numberOfSlides = slides.length;
-
-    // Calculate the new width for slideNav and position for slideLeftArrow
-    const newSlideNavWidth = (numberOfSlides * 22) + 118 + 'px';
-    const newSlideLeftArrowPosition = (numberOfSlides * 22) + 65 + 'px';
-
-    // Apply the calculated values to the elements
-    slideNav.style.width = newSlideNavWidth;
-    slideLeftArrow.style.right = newSlideLeftArrowPosition;
-
- /*   
-    // Log the number of slides and calculated values to the console
-    console.log('Number of slides:', numberOfSlides);
-    console.log('Slide Nav Width:', newSlideNavWidth);
-    console.log('Slide Left Arrow Position:', newSlideLeftArrowPosition);
-} else {
-    console.log('Slider not found.');
+        if (window.innerWidth <= 768) {
+            // Code for small screens (e.g., mobile)
+            const newSlideLeftArrowPosition = (numberOfSlides * 22) + 60 + 'px';
+            const newSlideRightArrowPosition = (numberOfSlides * 22) + 62 + 'px';
+            slideLeftArrow.style.right = newSlideLeftArrowPosition;
+            slideRightArrow.style.left = newSlideRightArrowPosition;
+        } else {
+            // Code for larger screens (e.g., desktop)
+            const newSlideNavWidth = (numberOfSlides * 22) + 118 + 'px';
+            const newSlideLeftArrowPosition = (numberOfSlides * 22) + 65 + 'px';
+            slideNav.style.width = newSlideNavWidth;
+            slideLeftArrow.style.right = newSlideLeftArrowPosition;
+        }
+    } else {
+        console.log('Slider not found.');
+    }
 }
-*/
