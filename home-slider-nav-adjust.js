@@ -25,7 +25,7 @@ function handleWindowResize() {
             const newSlideLeftArrowPosition = (numberOfSlides * 22) + 65 + 'px';
             slideNav.style.width = newSlideNavWidth;
             slideLeftArrow.style.right = newSlideLeftArrowPosition;
-            // No adjustment for slideRightArrow on larger screens
+            slideRightArrow.style.right = 18 + 'px';
         }
 
         // Log the number of slides and calculated values to the console
