@@ -19,6 +19,7 @@ function handleWindowResize() {
             const newSlideRightArrowPosition = (numberOfSlides * 22) + 62 + 'px';
             slideLeftArrow.style.right = newSlideLeftArrowPosition;
             slideRightArrow.style.left = newSlideRightArrowPosition;
+            slideNav.style.width = 'auto';
         } else {
             console.log('Large screen detected.'); // Debugging statement
             const newSlideNavWidth = (numberOfSlides * 22) + 118 + 'px';
