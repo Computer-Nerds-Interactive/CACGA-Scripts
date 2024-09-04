@@ -9,22 +9,22 @@ function handleWindowResize() {
 
     // Check if the slider exists
     if (slider) {
-        console.log('Slider found.'); // Debugging statement
+        // console.log('Slider found.'); // Debugging statement
         const slides = slider.querySelectorAll('.w-slide');
         const numberOfSlides = slides.length;
 
         // Log initial positions before any adjustments
-        console.log('Initial Slide Left Arrow Position:', slideLeftArrow.style.right);
-        console.log('Initial Slide Right Arrow Position:', slideRightArrow ? slideRightArrow.style.left : 'Not found');
+        // console.log('Initial Slide Left Arrow Position:', slideLeftArrow.style.right);
+        // console.log('Initial Slide Right Arrow Position:', slideRightArrow ? slideRightArrow.style.left : 'Not found');
 
         if (window.innerWidth <= 768) {
-            console.log('Small screen detected.'); // Debugging statement
+            // console.log('Small screen detected.'); // Debugging statement
             const newSlideLeftArrowPosition = ((numberOfSlides * 11) + 44) + 'px';
             const newSlideRightArrowPosition = ((numberOfSlides * 11) + 46) + 'px';
             slideLeftArrow.style.right = newSlideLeftArrowPosition;
             slideRightArrow.style.left = newSlideRightArrowPosition;
         } else {
-            console.log('Large screen detected.'); // Debugging statement
+            // console.log('Large screen detected.'); // Debugging statement
             const newSlideNavWidth = (numberOfSlides * 22) + 118 + 'px';
             const newSlideLeftArrowPosition = (numberOfSlides * 22) + 65 + 'px';
             slideNav.style.width = newSlideNavWidth;
@@ -33,14 +33,14 @@ function handleWindowResize() {
         }
 
         // Log the number of slides and calculated values to the console
-        console.log('Number of slides:', numberOfSlides);
-        console.log('Slide Nav Width:', slideNav.style.width);
-        console.log('Slide Left Arrow Position:', slideLeftArrow.style.right);
-        console.log('Slide Right Arrow Position:', slideRightArrow ? slideRightArrow.style.left : 'Not found');
+        // console.log('Number of slides:', numberOfSlides);
+        // console.log('Slide Nav Width:', slideNav.style.width);
+        // console.log('Slide Left Arrow Position:', slideLeftArrow.style.right);
+        // console.log('Slide Right Arrow Position:', slideRightArrow ? slideRightArrow.style.left : 'Not found');
 
         // Log final positions after adjustments
-        console.log('Final Slide Left Arrow Position:', slideLeftArrow.style.right);
-        console.log('Final Slide Right Arrow Position:', slideRightArrow ? slideRightArrow.style.left : 'Not found');
+        // console.log('Final Slide Left Arrow Position:', slideLeftArrow.style.right);
+        // console.log('Final Slide Right Arrow Position:', slideRightArrow ? slideRightArrow.style.left : 'Not found');
     } else {
         console.log('Slider not found.');
     }
