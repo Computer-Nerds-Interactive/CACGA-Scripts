@@ -1,4 +1,5 @@
 // Function to run code based on window size
+
 function handleWindowResize() {
     console.log('Handling window resize...'); // Debugging statement
 
@@ -29,7 +30,7 @@ function handleWindowResize() {
             const newSlideLeftArrowPosition = (numberOfSlides * 22) + 65 + 'px';
             slideNav.style.width = newSlideNavWidth;
             slideLeftArrow.style.right = newSlideLeftArrowPosition;
-            slideRightArrow.style.right = 18 + 'px';
+            slideRightArrow.style.right = 10 + 'px';
         }
 
         // Log the number of slides and calculated values to the console
@@ -47,4 +48,6 @@ function handleWindowResize() {
 }
 
 // Run the function on load
+window.onload = function() {
 handleWindowResize();
+};
