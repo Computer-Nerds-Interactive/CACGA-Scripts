@@ -13,6 +13,10 @@ function handleWindowResize() {
         const slides = slider.querySelectorAll('.w-slide');
         const numberOfSlides = slides.length;
 
+        // Log initial positions before any adjustments
+        console.log('Initial Slide Left Arrow Position:', slideLeftArrow.style.right);
+        console.log('Initial Slide Right Arrow Position:', slideRightArrow ? slideRightArrow.style.left : 'Not found');
+
         if (window.innerWidth <= 768) {
             console.log('Small screen detected.'); // Debugging statement
             const newSlideLeftArrowPosition = (numberOfSlides * 11) + 44 + 'px';
@@ -33,6 +37,10 @@ function handleWindowResize() {
         console.log('Slide Nav Width:', slideNav.style.width);
         console.log('Slide Left Arrow Position:', slideLeftArrow.style.right);
         console.log('Slide Right Arrow Position:', slideRightArrow ? slideRightArrow.style.left : 'Not found');
+
+        // Log final positions after adjustments
+        console.log('Final Slide Left Arrow Position:', slideLeftArrow.style.right);
+        console.log('Final Slide Right Arrow Position:', slideRightArrow ? slideRightArrow.style.left : 'Not found');
     } else {
         console.log('Slider not found.');
     }
