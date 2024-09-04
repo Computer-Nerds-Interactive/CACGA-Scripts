@@ -15,8 +15,8 @@ function handleWindowResize() {
 
         if (window.innerWidth <= 768) {
             console.log('Small screen detected.'); // Debugging statement
-            const newSlideLeftArrowPosition = (numberOfSlides * 22) + 55 + 'px';
-            const newSlideRightArrowPosition = (numberOfSlides * 22) + 55 + 'px';
+            const newSlideLeftArrowPosition = (numberOfSlides * 11) + 55 + 'px';
+            const newSlideRightArrowPosition = (numberOfSlides * 11) + 55 + 'px';
             slideLeftArrow.style.right = newSlideLeftArrowPosition;
             slideRightArrow.style.left = newSlideRightArrowPosition;
         } else {
