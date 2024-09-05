@@ -1,7 +1,7 @@
 // Function to run code based on window size
 
-function handleWindowResize() {
-    console.log('Handling window resize...'); // Debugging statement
+function homeSlideNavAdjust() {
+    console.log('Resizing Slider Nav...'); // Debugging statement
 
     const slider = document.querySelector('.home-hero_slider');
     const slideNav = document.querySelector('.home-hero_slide-nav');
@@ -49,5 +49,5 @@ function handleWindowResize() {
 
 // Run the function on load
 window.onload = function() {
-handleWindowResize();
+homeSlideNavAdjust();
 };
