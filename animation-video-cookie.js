@@ -1,3 +1,4 @@
+
     function handleVideoAnimation() {
         const videoElement = document.querySelector('.intro-animated-video');
         if (videoElement) {
@@ -13,26 +14,32 @@
         }
     }
 
-    // Check if CookieYes is loaded and then determine the consent status
+    // Function to check cookie consent
     function checkCookieConsent() {
         if (typeof CookieYes !== 'undefined') {
+            // Wait for the CookieYes script to load
             CookieYes.on("consent", function(consent) {
                 console.log('Cookie consent checked:', consent);
-                // Check if the user accepted cookies
-                if (!consent.statistics) { // Adjust based on which cookies you're monitoring
+
+                // Check if the user accepted or rejected uncategorized cookies
+                if (consent.uncategorized) {
+                    // User accepted uncategorized cookies; add the event listener to the video
                     const video = document.getElementById('home-animation');
                     if (video) {
                         video.addEventListener('ended', handleVideoAnimation);
-                        console.log('Event listener added for video end.');
+                        console.log('Event listener added for video end (accepted).');
                     } else {
-                        console.error('Video element with ID home-animation not found.');
+                        console.error('Video element with ID home-animation not found (accepted).');
                     }
                 } else {
-                    // If the user has accepted cookies, hide the video
-                    const videoElement = document.querySelector('.intro-animated-video');
-                    if (videoElement) {
-                        videoElement.style.display = 'none';
-                        console.log('Video hidden due to cookie consent.');
+                    // User rejected uncategorized cookies; play video every time
+                    const video = document.getElementById('home-animation');
+                    if (video) {
+                        video.style.display = 'block';
+                        video.style.opacity = '1'; // Reset opacity for visibility
+                        console.log('Video displayed again due to cookie rejection.');
+                    } else {
+                        console.error('Video element with ID home-animation not found (rejected).');
                     }
                 }
             });
