@@ -3,10 +3,10 @@
         const videoElement = document.querySelector('.intro-animated-video');
         if (videoElement) {
             console.log('Video is fading out.');
-            // Fade out the video
-            videoElement.style.opacity = '0';
+            // Start the fade-out process
+            videoElement.style.opacity = '0'; // Change opacity to 0
             setTimeout(() => {
-                videoElement.style.display = 'none';
+                videoElement.style.display = 'none'; // Set display to none after the transition
                 console.log('Video is now hidden.');
             }, 300); // Match the duration of the opacity transition
         } else {
