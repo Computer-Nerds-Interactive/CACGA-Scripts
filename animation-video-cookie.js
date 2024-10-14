@@ -1,63 +1,42 @@
+// Helper to get cookie value by name
+function getCookie(name) {
+  let value = `; ${document.cookie}`;
+  let parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
 
-    function handleVideoAnimation() {
-        const videoElement = document.querySelector('.intro-animated-video');
-        if (videoElement) {
-            console.log('Video is fading out.');
-            // Start the fade-out process
-            videoElement.style.opacity = '0'; // Change opacity to 0
-            setTimeout(() => {
-                videoElement.style.display = 'none'; // Set display to none after the transition
-                console.log('Video is now hidden.');
-            }, 300); // Match the duration of the opacity transition
-        } else {
-            console.error('Video element not found.');
-        }
+// Helper to set a cookie with a 50-year expiration
+function setCookie(name, value) {
+  let date = new Date();
+  date.setFullYear(date.getFullYear() + 50); // Set to expire in 50 years
+  document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const videoWrapper = document.querySelector('.intro-animated-video-wrapper');
+  
+  // Check if the user is visiting the page for the first time
+  if (!getCookie("visitedBefore")) {
+    // If this is the first visit, show the video wrapper
+    if (videoWrapper) {
+      videoWrapper.style.display = 'block';
+
+      // Set the video duration to 11 seconds (11,000 milliseconds)
+      const videoDuration = 11000; 
+
+      // Fade out after the video ends
+      setTimeout(function() {
+        videoWrapper.style.transition = 'opacity 0.3s ease-out';
+        videoWrapper.style.opacity = '0';
+
+        // Hide the wrapper after the fade-out
+        setTimeout(function() {
+          videoWrapper.style.display = 'none';
+        }, 300); // Fade-out duration of 0.3 seconds
+      }, videoDuration);
     }
 
-    // Function to check cookie consent
-    function checkCookieConsent() {
-        console.log('Checking CookieYes consent...');
-        if (typeof CookieYes !== 'undefined') {
-            // Wait for the CookieYes script to load
-            CookieYes.on("consent", function(consent) {
-                console.log('Cookie consent checked:', consent);
-
-                // Check if the user accepted or rejected uncategorized cookies
-                if (consent.uncategorized) {
-                    // User accepted uncategorized cookies; add the event listener to the video
-                    const video = document.getElementById('home-animation');
-                    if (video) {
-                        video.addEventListener('ended', handleVideoAnimation);
-                        console.log('Event listener added for video end (accepted).');
-                    } else {
-                        console.error('Video element with ID home-animation not found (accepted).');
-                    }
-                } else {
-                    // User rejected uncategorized cookies; play video every time
-                    const video = document.getElementById('home-animation');
-                    if (video) {
-                        video.style.display = 'block';
-                        video.style.opacity = '1'; // Reset opacity for visibility
-                        console.log('Video displayed again due to cookie rejection.');
-                    } else {
-                        console.error('Video element with ID home-animation not found (rejected).');
-                    }
-                }
-            });
-        } else {
-            console.error('CookieYes not loaded.');
-            // Fallback behavior if CookieYes isn't loaded
-            const video = document.getElementById('home-animation');
-            if (video) {
-                video.addEventListener('ended', handleVideoAnimation);
-                console.log('Event listener added for video end (fallback).');
-            } else {
-                console.error('Video element with ID home-animation not found (fallback).');
-            }
-        }
-    }
-
-    // Wait for the page to load before checking for CookieYes
-    window.onload = function() {
-        setTimeout(checkCookieConsent, 500); // Add a delay to ensure CookieYes is fully loaded
-    };
+    // Set a cookie so this won't run on the user's next visit
+    setCookie("visitedBefore", "true"); // No need to specify expiration here, already handled
+  }
+});
