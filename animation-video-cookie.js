@@ -5,12 +5,21 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
 
+/*
 // Helper to set a cookie with a 50-year expiration
 function setCookie(name, value) {
   let date = new Date();
   date.setFullYear(date.getFullYear() + 50); // Set to expire in 50 years
   document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
 }
+  */
+ // Helper to set a cookie with a 30-second expiration for testing purposes
+function setCookie(name, value) {
+  let date = new Date();
+  date.setTime(date.getTime() + 30 * 1000); // Set to expire in 30 seconds
+  document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+}
+
 
 document.addEventListener("DOMContentLoaded", function() {
   const videoWrapper = document.querySelector('.intro-animated-video-wrapper');
