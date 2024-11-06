@@ -12,8 +12,9 @@
     date.setFullYear(date.getFullYear() + 50); // Set to expire in 50 years
     document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
   }
+  
     
-   /*
+  /*
   // Helper to set a cookie with a 30-second expiration for testing purposes
   function setCookie(name, value) {
     let date = new Date();
