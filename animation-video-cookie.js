@@ -31,6 +31,8 @@
       // If this is the first visit, show the video wrapper
       if (videoWrapper) {
         videoWrapper.style.display = 'block';
+        videoWrapper.style.transition = 'opacity 0.3s ease out';
+        videoWrapper.style.opacity = '100';
 
         // Set the video duration to 11 seconds (11,000 milliseconds)
         const videoDuration = 11000; 
