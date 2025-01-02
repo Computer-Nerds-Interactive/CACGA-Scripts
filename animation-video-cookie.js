@@ -1,17 +1,3 @@
-// Helper to get cookie value by name
-function getCookie(name) {
-  let value = `; ${document.cookie}`;
-  let parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
-}
-
-// Helper to set a cookie with a 50-year expiration
-function setCookie(name, value) {
-  let date = new Date();
-  date.setFullYear(date.getFullYear() + 50); // Set to expire in 50 years
-  document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
-}
-
 document.addEventListener("DOMContentLoaded", function() {
   const videoWrapper = document.querySelector('.intro-animated_container');
   const skipButton = document.querySelector('.intro-animated_skip-button');
@@ -43,10 +29,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Add event listener for the skip button
       if (skipButton) {
-        skipButton.addEventListener('click', () => {
+        const skipHandler = () => {
           clearTimeout(timeoutId); // Cancel the fade-out timeout
           fadeOut(); // Immediately fade out
-        });
+        };
+
+        // Support for both click and touch events
+        skipButton.addEventListener('click', skipHandler);
+        skipButton.addEventListener('touchstart', skipHandler, { passive: true });
       }
     }
 
