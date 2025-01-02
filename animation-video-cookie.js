@@ -43,10 +43,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Add event listener for the skip button
       if (skipButton) {
-        skipButton.addEventListener('click', () => {
+        const skipHandler = () => {
           clearTimeout(timeoutId); // Cancel the fade-out timeout
           fadeOut(); // Immediately fade out
-        });
+        };
+
+        // Support for both click and touch events
+        skipButton.addEventListener('click', skipHandler);
+        skipButton.addEventListener('touchstart', skipHandler, { passive: true });
       }
     }
 
