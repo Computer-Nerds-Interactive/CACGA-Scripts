@@ -1,0 +1,108 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: Oswald !important;
+}
+
+.btn {
+  font-family: Oswald !important;
+  font-size: 1rem !important;
+  text-transform: capitalize !important;
+  letter-spacing: 0 !important;
+}
+
+.btn:not(.product-hover-overlay-buttons .btn) {
+  padding: 12px 20px !important;
+  letter-spacing: 0 !important;
+  position: relative !important;
+  transition: color, background-color, transform 0.25s ease !important;
+}  
+
+.btn:hover {
+   background-color: #332828 !important;
+   transform: translateY(-1px) !important;
+}
+
+
+/* Add background image to stationary nav */
+.navbar {
+   background-image: linear-gradient(#ffffffcf, #ffffffcf), url(https://cdn.prod.website-files.com/5ef0bce3ce045b561ac13dea/5ef0bce3ce045b0214c141c6_Website-Header2.webp) !important;
+   background-size: auto, cover !important;
+   border-bottom: .5rem solid #C8181E;
+}
+
+/* Add background image to fixed nav */
+.navbar.fixed-top {
+   background-image: linear-gradient(#ffffffcf, #ffffffcf), url(https://cdn.prod.website-files.com/5ef0bce3ce045b561ac13dea/5ef0bce3ce045b0214c141c6_Website-Header2.webp) !important;
+   background-size: auto, cover !important;
+}
+
+/* Adjust Top Nav Bar Size */
+.navbar-brand {
+   max-height: 18vw !important;
+   min-height: 180px !important;
+}
+
+/* Adjust Nav Logo */
+.navbar-brand img {
+    width: auto !important;
+    height: 18vw !important;
+   max-height: 200px !important;
+   min-height: 160px !important;
+}
+
+a:hover {
+	cursor: pointer !important;
+}
+
+/* Footer Ticket Link */
+.ticket-link {
+  color: #B83D33 !important;
+  text-decoration: none;
+}
+
+.ticket-link:hover {
+  color: #e84e41 !important; /* Adjust to desired hover color */
+  text-decoration: underline;
+}
+
+.list-unstyled {
+	font-family: Verdana;
+}
+
+ul.list-unstyled li {
+	margin-bottom: 0.5rem;
+}
+
+ul.list-unstyled li a:hover {
+  color: #e84e41 !important; /* Adjust to desired hover color */
+  text-decoration: underline;
+}
+
+.footer-heading {
+	color:#c0392b;
+	text-transform: uppercase;
+	font-size: 1.25rem;
+	margin-bottom: 1rem;
+}
+
+.footer-hours {
+	margin-bottom: .1rem !important;
+}
+
+.is-last {
+	margin-bottom: .5rem !important;
+}
+
+div.bg-gray-800 { 
+  background-color: #181818 !important;
+}
+
+p.mb-md-0 {
+   color: white !important;
+   font-size: .75rem !important;
+}
+
+@media (max-width: 992px) {
+	.row .justify-content-center {
+		display:block;
+	}
+}
