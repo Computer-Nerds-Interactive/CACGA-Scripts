@@ -58,6 +58,11 @@ a:hover {
   border-bottom: 0.5rem solid #C8181E;
 }
 
+/*Footer*/
+.main-footer {
+  border-top: 0.5rem solid #C8181E;
+}
+
 /* Footer Links */
 .ticket-link {
   color: #B83D33 !important;
