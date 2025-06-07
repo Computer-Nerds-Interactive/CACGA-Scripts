@@ -6,12 +6,8 @@ for (const link of document.querySelectorAll('a')) {
   }
 }
 
-/* Remove for Now
-
 // Update <a class="navbar-brand">
 const brandLink = document.querySelector('a.navbar-brand');
 if (brandLink) {
   brandLink.href = 'https://www.artsglenallen.com/';
 }
-  
-*/
