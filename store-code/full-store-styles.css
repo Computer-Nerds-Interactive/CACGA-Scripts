@@ -24,8 +24,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navbar Styles */
 .navbar, .navbar.fixed-top {
-  background-image: linear-gradient(#ffffffcf, #ffffffcf),
-    url(https://cdn.prod.website-files.com/5ef0bce3ce045b561ac13dea/5ef0bce3ce045b0214c141c6_Website-Header2.webp) !important;
+  background-image: linear-gradient(#ffffffdf, #ffffffdf),
+    url(https://cdn.prod.website-files.com/5ef0bce3ce045b561ac13dea/685af25d2418f726880c2bd0_1920x430-Giftshop-Header%20.avif) !important;
   background-size: auto, cover !important;
   border-bottom: 0.5rem solid #C8181E;
 }
@@ -38,14 +38,14 @@ h1, h2, h3, h4, h5, h6 {
 /* Navbar Logo */
 .navbar-brand {
   max-height: 18vw !important;
-  min-height: 180px !important;
+  min-height: 140px !important;
 }
 
 .navbar-brand img {
   width: auto !important;
   height: 18vw !important;
-  max-height: 200px !important;
-  min-height: 160px !important;
+  max-height: 160px !important;
+  min-height: 120px !important;
 }
 
 /* Hover Links */
@@ -135,17 +135,18 @@ p.mb-md-0 {
   }
 
   .contact-page-side {
-    width: 100%;
-    padding: 0 0 1rem;
+    width: 100% !important;
+    padding: 0 0 1rem !important;
   }
 
   .social-icons-div {
     margin-bottom: 21px;
-    text-align: center;
+    text-align: center !important;
   }
 
   .content-wrapper.treatment-1.address {
     margin-top: 6px;
+    text-align: center !important;
   }
 
   .al {
@@ -180,6 +181,12 @@ p.mb-md-0 {
   .content-wrapper.treatment-1 {
     height: auto;
   }
+
+
+.contact_general-inquiry {
+     text-align: center !important;
+     font-size: 3rem;
+}
 
   .al {
     line-height: 34px;
